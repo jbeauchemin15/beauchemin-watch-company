@@ -46,3 +46,14 @@ footer {
 .footer-link:hover {
     color: #fff;
 }
+
+.footer-title, .info {
+    color: rgba(255, 255, 255, 0.75);
+    margin: 20px 0;
+    text-transform: capitalize;
+}
+
+.footer-title {
+    margin-top: 80px;
+    color: #fff;
+}
