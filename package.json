@@ -1,0 +1,25 @@
+{
+  "name": "bwcwebsite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbeauchemin15/beauchemin-watch-company.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jbeauchemin15/beauchemin-watch-company/issues"
+  },
+  "homepage": "https://github.com/jbeauchemin15/beauchemin-watch-company#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "express.js": "^1.0.0",
+    "firebase-admin": "^11.0.0",
+    "nodemon": "^2.0.16"
+  }
+}
