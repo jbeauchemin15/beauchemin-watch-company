@@ -27,8 +27,31 @@ submitBtn.addEventListener('click', () => {
 
         //display loader gif
         loader.style.display = 'block';
+
+        //call sendData function
+        sendData('/signup', {
+            name: name.value,
+            email: email.value,
+            password: password.value,
+            number: number.value,
+            tac: tac.checked,
+            notification: notification.checked,
+            seller: false
+        }) 
     }
-});
+})
+
+//send form data function
+const sendData = (path, data) => {
+    fetch(path, {
+        method: 'post',
+        headers: new Headers({'Content-Type': 'application/json'}),
+        body: JSON.stringify(data)
+    }).then((res) => res.json())
+    .then(response => {
+        console.log(response);
+    })
+}
 
 //alert function
 const showAlert = (msg) => {
