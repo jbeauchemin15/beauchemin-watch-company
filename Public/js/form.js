@@ -1,4 +1,4 @@
-const loader =document.querySelector('.loader');
+const loader = document.querySelector('.loader');
 
 // select inputs
 const submitBtn = document.querySelector('.submit-btn');
@@ -10,7 +10,7 @@ const tac = document.querySelector('#terms-and-cond');
 const notification = document.querySelector('#notification');
 
 submitBtn.addEventListener('click', () => {
-    if(name.value.length <3) {
+    /*if(name.value.length <3) {
         showAlert('name must be 3 letters long');
     } else if (!email.value.length) {
         showAlert('enter your email');
@@ -23,7 +23,7 @@ submitBtn.addEventListener('click', () => {
     } else if (!tac.checked) {
         showAlert('you must agree to our terms and conditions');
     } else {
-        //submit form
+        //submit form */
 
         //display loader gif
         loader.style.display = 'block';
@@ -38,10 +38,10 @@ submitBtn.addEventListener('click', () => {
             notification: notification.checked,
             seller: false
         }) 
-    }
+    //}
 })
 
-//send form data function
+//send form data
 const sendData = (path, data) => {
     fetch(path, {
         method: 'post',
@@ -49,8 +49,19 @@ const sendData = (path, data) => {
         body: JSON.stringify(data)
     }).then((res) => res.json())
     .then(response => {
-        console.log(response);
+        processData(response);
     })
+}
+
+//process form data
+const processData = (data) => {
+    loader.style.display = null;
+    if (data.alert) {
+        showAlert(data.alert);
+    } else if (data.name) {
+        //create authToken
+        data.authToken = generateToken(data.email);
+    }
 }
 
 //alert function
