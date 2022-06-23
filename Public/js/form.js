@@ -1,3 +1,5 @@
+const loader =document.querySelector('.loader');
+
 // select inputs
 const submitBtn = document.querySelector('.submit-btn');
 const name = document.querySelector('#name');
@@ -20,6 +22,11 @@ submitBtn.addEventListener('click', () => {
         showAlert('please enter a valid phone number');
     } else if (!tac.checked) {
         showAlert('you must agree to our terms and conditions');
+    } else {
+        //submit form
+
+        //display loader gif
+        loader.style.display = 'block';
     }
 });
 
